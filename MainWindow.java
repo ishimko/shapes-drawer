@@ -1,19 +1,18 @@
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by user on 16.02.2016.
- */
+
 public class MainWindow {
+    static ShapesDrawer shapesDrawer = new ShapesDrawer();
+    static {
+        shapesDrawer.addShape(new Rectangle(new Point(10, 10), 50, 70));
+        shapesDrawer.addShape(new Line(new Point(0, 0), new Point(200, 100)));
+    }
     public static void main(String[] args) {
-        JFrame mainFrame =  new JFrame("Лабораторная работа №1");
+        JFrame mainFrame = new JFrame("Лабораторная работа №1");
         mainFrame.setVisible(true);
         mainFrame.setSize(300, 200);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        ShapesDrawer shapesDrawer = new ShapesDrawer();
         mainFrame.add(shapesDrawer);
-        shapesDrawer.addFigure(new Line(new Point(10,10), new Point(20, 100)));
-        shapesDrawer.draw();
     }
 }

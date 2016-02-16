@@ -5,7 +5,7 @@ public class Line implements Shape {
 
     public Line(Point a, Point b){
         this.a = a;
-        this.b = a;
+        this.b = b;
     }
 
     public void draw(Graphics g){
