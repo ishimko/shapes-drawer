@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Rectangle implements Figure{
+public class Rectangle implements Shape {
     Point bottomLeft;
     int width, height;
 

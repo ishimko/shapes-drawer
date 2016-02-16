@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Line implements Figure {
+public class Line implements Shape {
     Point a, b;
 
     public Line(Point a, Point b){

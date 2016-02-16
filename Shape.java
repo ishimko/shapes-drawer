@@ -1,5 +1,5 @@
 import java.awt.*;
 
-public interface Figure {
+public interface Shape {
     void draw(Graphics g);
 }

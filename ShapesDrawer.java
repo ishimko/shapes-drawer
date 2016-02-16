@@ -2,12 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class FiguresDrawer extends JPanel {
-    private ArrayList<Figure> figuresList;
+public class ShapesDrawer extends JPanel {
+    private ArrayList<Shape> figuresList;
 
-    public FiguresDrawer(){};
-    public FiguresDrawer(ArrayList<Figure> figureList) {
-        this.figuresList = new ArrayList<Figure>(figureList);
+    public ShapesDrawer(){};
+    public ShapesDrawer(ArrayList<Shape> shapeList) {
+        this.figuresList = new ArrayList<Shape>(shapeList);
     }
 
     public void draw() {
@@ -21,7 +21,7 @@ public class FiguresDrawer extends JPanel {
         }
     }
 
-    public void addFigure(Figure f) {
+    public void addFigure(Shape f) {
         figuresList.add(f);
     }
 

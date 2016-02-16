@@ -11,9 +11,9 @@ public class MainWindow {
         mainFrame.setSize(300, 200);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        FiguresDrawer figuresDrawer = new FiguresDrawer();
-        mainFrame.add(figuresDrawer);
-        figuresDrawer.addFigure(new Line(new Point(10,10), new Point(20, 100)));
-        figuresDrawer.draw();
+        ShapesDrawer shapesDrawer = new ShapesDrawer();
+        mainFrame.add(shapesDrawer);
+        shapesDrawer.addFigure(new Line(new Point(10,10), new Point(20, 100)));
+        shapesDrawer.draw();
     }
 }
