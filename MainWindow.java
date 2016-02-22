@@ -7,6 +7,7 @@ public class MainWindow {
         ShapesDrawer shapesDrawer = new ShapesDrawer();
         shapesDrawer.addShape(new Rectangle(new Point(10, 10), 10, 10));
         shapesDrawer.addShape(new Line(new Point(0, 0), new Point(100,100)));
+        shapesDrawer.addShape(new Square(new Point(150, 150), 100));
 
         JFrame mainFrame = new JFrame("Лабораторная работа №1");
         mainFrame.setVisible(true);
