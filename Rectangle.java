@@ -1,16 +1,10 @@
-import java.awt.*;
+//package src;
 
-public class Rectangle implements Shape {
-    Point bottomLeft;
-    int width, height;
-
+public class Rectangle extends Polyline {
     public Rectangle(Point bottomLeft, int width, int height){
-        this.bottomLeft = bottomLeft;
-        this.width = width;
-        this.height = height;
-    }
-
-    public void draw(Graphics g) {
-        g.drawRect(bottomLeft.x, bottomLeft.y, width, height);
+        addPoint(new Point(bottomLeft.x, bottomLeft.y));
+        addPoint(new Point(bottomLeft.x, bottomLeft.y - height));
+        addPoint(new Point(bottomLeft.x + width, bottomLeft.y - height));
+        addPoint(new Point(bottomLeft.x + width, bottomLeft.y));
     }
 }

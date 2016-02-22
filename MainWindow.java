@@ -1,14 +1,14 @@
-import javax.swing.*;
-import java.awt.*;
+//package src;
 
+import javax.swing.*;
 
 public class MainWindow {
-    static ShapesDrawer shapesDrawer = new ShapesDrawer();
-    static {
-        shapesDrawer.addShape(new Rectangle(new Point(10, 10), 50, 70));
-        shapesDrawer.addShape(new Line(new Point(0, 0), new Point(200, 100)));
-    }
     public static void main(String[] args) {
+        System.out.println("Hello");
+
+        ShapesDrawer shapesDrawer = new ShapesDrawer();
+        shapesDrawer.addShape(new Rectangle(new Point(10, 10), 50, 70));
+
         JFrame mainFrame = new JFrame("Лабораторная работа №1");
         mainFrame.setVisible(true);
         mainFrame.setSize(300, 200);
