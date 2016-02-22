@@ -11,7 +11,7 @@ public class Polyline implements Shape{
     }
 
     private int[] getXs(){
-        int xs[] = new int[1];
+        int[] xs = new int[points.size()];
 
         for (int i = 0; i < points.size(); i++){
             xs[i] = points.get(i).x;
@@ -21,13 +21,15 @@ public class Polyline implements Shape{
     }
 
     private int[] getYs(){
-        int ys[] = new int[1];
+        int[] ys = new int[points.size()];
+
         for (int i = 0; i < points.size(); i++){
             ys[i] = points.get(i).y;
         }
 
         return ys;
     }
+
 
     public void draw(Graphics g){
         g.drawPolyline(getXs(), getYs(), points.size());
