@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class Ellipse implements Shape{
+public class Ellipse extends Shape{
     private Point topLeft;
     private int width;
     private int height;
@@ -12,6 +12,7 @@ public class Ellipse implements Shape{
     }
 
     public void draw(Graphics g){
+        super.draw(g);
         g.drawOval(topLeft.x, topLeft.y + height, width, height);
     }
 }

@@ -3,8 +3,8 @@
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Polyline implements Shape{
-    protected ArrayList<Point> points = new ArrayList<>();
+public class Polyline extends Shape{
+    private ArrayList<Point> points = new ArrayList<>();
 
     public void addPoint(Point p){
         points.add(p);
@@ -32,6 +32,7 @@ public class Polyline implements Shape{
 
 
     public void draw(Graphics g){
+        super.draw(g);
         g.drawPolyline(getXs(), getYs(), points.size());
     }
 }
