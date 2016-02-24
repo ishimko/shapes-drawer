@@ -10,6 +10,16 @@ public class Polyline extends Shape{
         points.add(new Point(p.x, p.y));
     }
 
+    public void replacePoint(int i, Point newPoint){
+        if (i < points.size()){
+            points.set(i, newPoint);
+        } else {
+            if (i == points.size()){
+                addPoint(newPoint);
+            }
+        }
+    }
+
     private int[] getXs(){
         int[] xs = new int[points.size()];
 

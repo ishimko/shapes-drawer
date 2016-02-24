@@ -1,32 +1,34 @@
+import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 
 public class LineDrawer extends MouseAdapter{
-    private Point startPoint, stopPoint;
     private ShapesDrawer shapesDrawer;
+    private Line drawingLine;
+    private JButton setButton = new JButton("Линия");
 
     public LineDrawer(ShapesDrawer shapesDrawer) {
         this.shapesDrawer = shapesDrawer;
-        startPoint = new Point();
-        stopPoint = new Point();
     }
 
     public void mousePressed(MouseEvent e) {
-        startPoint.x = e.getX();
-        startPoint.y = e.getY();
-    }
-
-    public void mouseReleased(MouseEvent e) {
-        stopPoint.x = e.getX();
-        stopPoint.y = e.getY();
-
+        drawingLine = new Line(new Point(e.getX(), e.getY()));
         addLine();
     }
 
-    private void addLine() {
-        shapesDrawer.addShape(new Line(startPoint, stopPoint));
+    public void mouseDragged(MouseEvent e){
+        drawingLine.setFinishPoint(new Point(e.getX(), e.getY()));
         shapesDrawer.draw();
+    }
+
+    private void addLine() {
+        shapesDrawer.addShape(drawingLine);
+        shapesDrawer.draw();
+    }
+
+    public JButton getSetButton(){
+        return setButton;
     }
 
 }

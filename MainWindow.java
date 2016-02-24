@@ -32,7 +32,18 @@ public class MainWindow {
         mainFrame.setVisible(true);
         mainFrame.setSize(300, 200);
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        shapesDrawer.addMouseListener(new LineDrawer(shapesDrawer));
+        mainFrame.setLayout(new GridLayout());
+        mainFrame.setLocationRelativeTo(null);
+
+        LineDrawer lineDrawer = new LineDrawer(shapesDrawer);
+        shapesDrawer.addMouseListener(lineDrawer);
+        shapesDrawer.addMouseMotionListener(lineDrawer);
+
+        JPanel buttonsPanel = new JPanel();
+        mainFrame.add(buttonsPanel);
+        buttonsPanel.add(lineDrawer.getSetButton());
+
         mainFrame.add(shapesDrawer);
+        mainFrame.add(buttonsPanel);
     }
 }
