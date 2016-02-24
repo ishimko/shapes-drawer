@@ -14,6 +14,10 @@ public class MainWindow {
         l.setBorderColor(Color.green);
         shapesDrawer.addShape(l);
 
+        Line l1 = new Line(new Point(50, 50), new Point(100, 200));
+        l1.setBorderColor(Color.black);
+        shapesDrawer.addShape(l1);
+
         shapesDrawer.addShape(new Square(new Point(150, 150), 100));
         shapesDrawer.addShape(new Triangle(new Point(0, 0), new Point(0, 20), new Point(20, 0)));
         shapesDrawer.addShape(new Circle(new Point(50, 50), 50));
@@ -21,12 +25,14 @@ public class MainWindow {
         Ellipse e = new Ellipse(new Point(0, 50), 100, 150);
         e.setBorderColor(Color.MAGENTA);
         shapesDrawer.addShape(e);
+
     }
     public static void main(String[] args) {
         JFrame mainFrame = new JFrame("Лабораторная работа №1");
         mainFrame.setVisible(true);
         mainFrame.setSize(300, 200);
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        shapesDrawer.addMouseListener(new LineDrawer(shapesDrawer));
         mainFrame.add(shapesDrawer);
     }
 }
