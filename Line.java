@@ -9,8 +9,8 @@ public class Line extends Polyline {
         addPoint(b);
     }
 
-
-    public void setFinishPoint(Point finishPoint){
+    @Override
+    public void refreshShape(Point finishPoint){
         setPoint(1, finishPoint);
     }
 }

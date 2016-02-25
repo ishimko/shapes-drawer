@@ -15,5 +15,7 @@ public abstract class Shape {
         this.borderColor = borderColor;
     }
 
+    public abstract void refreshShape(Point p);
+
     public abstract void draw(Graphics g);
 }

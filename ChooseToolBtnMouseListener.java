@@ -2,7 +2,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public abstract class ChooseToolBtnMouseListener extends MouseAdapter {
-    protected ShapesDrawer shapesDrawer;
+    private ShapesDrawer shapesDrawer;
 
     public ChooseToolBtnMouseListener(ShapesDrawer shapesDrawer) {
         this.shapesDrawer = shapesDrawer;
@@ -14,4 +14,8 @@ public abstract class ChooseToolBtnMouseListener extends MouseAdapter {
     }
 
     public abstract void mousePressed(MouseEvent e);
+
+    protected ShapesDrawer getShapesDrawer(){
+        return shapesDrawer;
+    }
 }

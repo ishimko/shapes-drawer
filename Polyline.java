@@ -10,7 +10,7 @@ public class Polyline extends Shape{
         points.add(new Point(p.x, p.y));
     }
 
-    public void setPoint(int i, Point newPoint){
+    protected void setPoint(int i, Point newPoint){
         if (i < points.size()){
             points.set(i, newPoint);
         } else {
@@ -46,6 +46,12 @@ public class Polyline extends Shape{
 
     public int getPointsCount(){
         return points.size();
+    }
+
+
+    @Override
+    public void refreshShape(Point p){
+        addPoint(p);
     }
 
     public void draw(Graphics g){

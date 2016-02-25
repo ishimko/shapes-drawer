@@ -2,8 +2,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class RectangleDrawTool extends DrawTool{
-    private Rectangle drawingRectangle;
-
     public RectangleDrawTool(ShapesDrawer shapesDrawer){
         super(shapesDrawer);
         getChooseToolBtn().setText("Прямоугольник");
@@ -11,13 +9,8 @@ public class RectangleDrawTool extends DrawTool{
     }
 
     public void mousePressed(MouseEvent e){
-        drawingRectangle = new Rectangle(new Point(e.getX(), e.getY()), 1, 1);
-        createShape(drawingRectangle);
-    }
-
-    public void mouseDragged(MouseEvent e){
-        drawingRectangle.setBottomRight(new Point(e.getX(), e.getY()));
-        getShapesDrawer().draw();
+        drawingShape = new Rectangle(new Point(e.getX(), e.getY()), 1, 1);
+        createShape(drawingShape);
     }
 
     private class ChooseRectangleBtnMouseListener extends ChooseToolBtnMouseListener {
@@ -26,12 +19,10 @@ public class RectangleDrawTool extends DrawTool{
         }
 
         public void mousePressed(MouseEvent e){
-            super.removeListeners();
+            removeListeners();
 
-            shapesDrawer.addMouseListener(RectangleDrawTool.this);
-            shapesDrawer.addMouseMotionListener(RectangleDrawTool.this);
-
-            System.out.print("rectangle mode\n");
+            getShapesDrawer().addMouseListener(RectangleDrawTool.this);
+            getShapesDrawer().addMouseMotionListener(RectangleDrawTool.this);
         }
     }
 
