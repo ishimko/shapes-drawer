@@ -11,6 +11,6 @@ public class Line extends Polyline {
 
 
     public void setFinishPoint(Point finishPoint){
-        replacePoint(1, finishPoint);
+        setPoint(1, finishPoint);
     }
 }

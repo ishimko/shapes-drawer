@@ -15,7 +15,5 @@ public abstract class Shape {
         this.borderColor = borderColor;
     }
 
-    public void draw(Graphics g){
-        g.setColor(getBorderColor());
-    }
+    public abstract void draw(Graphics g);
 }

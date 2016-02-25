@@ -1,4 +1,4 @@
-//package src;
+import com.sun.javafx.scene.paint.GradientUtils;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ public class Polyline extends Shape{
         points.add(new Point(p.x, p.y));
     }
 
-    public void replacePoint(int i, Point newPoint){
+    public void setPoint(int i, Point newPoint){
         if (i < points.size()){
             points.set(i, newPoint);
         } else {
@@ -20,7 +20,7 @@ public class Polyline extends Shape{
         }
     }
 
-    private int[] getXs(){
+    protected int[] getXs(){
         int[] xs = new int[points.size()];
 
         for (int i = 0; i < points.size(); i++){
@@ -30,7 +30,7 @@ public class Polyline extends Shape{
         return xs;
     }
 
-    private int[] getYs(){
+    protected int[] getYs(){
         int[] ys = new int[points.size()];
 
         for (int i = 0; i < points.size(); i++){
@@ -40,9 +40,16 @@ public class Polyline extends Shape{
         return ys;
     }
 
+    public Point getPoint(int i){
+        return points.get(i);
+    }
+
+    public int getPointsCount(){
+        return points.size();
+    }
 
     public void draw(Graphics g){
-        super.draw(g);
-        g.drawPolyline(getXs(), getYs(), points.size());
+        g.setColor(getBorderColor());
+        g.drawPolyline(getXs(), getYs(), getPointsCount());
     }
 }

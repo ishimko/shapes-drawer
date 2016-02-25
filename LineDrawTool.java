@@ -1,34 +1,41 @@
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 
-public class LineDrawTool extends MouseAdapter{
-    private ShapesDrawer shapesDrawer;
+public class LineDrawTool extends DrawTool{
     private Line drawingLine;
-    private JButton setButton = new JButton("Линия");
 
     public LineDrawTool(ShapesDrawer shapesDrawer) {
-        this.shapesDrawer = shapesDrawer;
+        super(shapesDrawer);
+        getChooseToolBtn().setText("Линия");
+        getChooseToolBtn().addMouseListener(new ChooseLineBtnMouseListener(shapesDrawer));
     }
 
     public void mousePressed(MouseEvent e) {
         drawingLine = new Line(new Point(e.getX(), e.getY()));
-        addLine();
+        createShape(drawingLine);
     }
 
     public void mouseDragged(MouseEvent e){
         drawingLine.setFinishPoint(new Point(e.getX(), e.getY()));
-        shapesDrawer.draw();
+        getShapesDrawer().draw();
     }
 
-    private void addLine() {
-        shapesDrawer.addShape(drawingLine);
-        shapesDrawer.draw();
-    }
+    private class ChooseLineBtnMouseListener extends ChooseToolBtnMouseListener{
+        public ChooseLineBtnMouseListener(ShapesDrawer shapesDrawer){
+            super(shapesDrawer);
+        }
 
-    public JButton getSetButton(){
-        return setButton;
+        public void mousePressed(MouseEvent e){
+            super.removeListeners();
+
+            shapesDrawer.addMouseListener(LineDrawTool.this);
+            shapesDrawer.addMouseMotionListener(LineDrawTool.this);
+
+            System.out.print("line mode\n");
+        }
     }
 
 }

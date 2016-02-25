@@ -35,13 +35,18 @@ public class MainWindow {
         mainFrame.setLayout(new GridLayout());
         mainFrame.setLocationRelativeTo(null);
 
+        RectangleDrawTool rectangleDrawTool = new RectangleDrawTool(shapesDrawer);
+
+        //shapesDrawer.addMouseListener(rectangleDrawTool);
+        //shapesDrawer.addMouseMotionListener(rectangleDrawTool);
         LineDrawTool lineDrawTool = new LineDrawTool(shapesDrawer);
-        shapesDrawer.addMouseListener(lineDrawTool);
-        shapesDrawer.addMouseMotionListener(lineDrawTool);
+//        shapesDrawer.addMouseListener(lineDrawTool);
+//        shapesDrawer.addMouseMotionListener(lineDrawTool);
 
         JPanel buttonsPanel = new JPanel();
         mainFrame.add(buttonsPanel);
-        buttonsPanel.add(lineDrawTool.getSetButton());
+        buttonsPanel.add(lineDrawTool.getChooseToolBtn());
+        buttonsPanel.add(rectangleDrawTool.getChooseToolBtn());
 
         mainFrame.add(shapesDrawer);
         mainFrame.add(buttonsPanel);

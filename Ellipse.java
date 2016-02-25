@@ -12,7 +12,7 @@ public class Ellipse extends Shape{
     }
 
     public void draw(Graphics g){
-        super.draw(g);
+        g.setColor(getBorderColor());
         g.drawOval(topLeft.x, topLeft.y + height, width, height);
     }
 }

@@ -2,6 +2,8 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
 public class ShapesDrawer extends JPanel {
@@ -15,6 +17,24 @@ public class ShapesDrawer extends JPanel {
         super.paintComponent(g);
         for (Shape shape : shapesList){
             shape.draw(g);
+        }
+    }
+
+    public MouseListener getMouseListener(){
+        MouseListener[] mouseListeners = getMouseListeners();
+        if (mouseListeners.length > 0){
+            return mouseListeners[0];
+        } else {
+            return null;
+        }
+    }
+
+    public MouseMotionListener getMouseMotionListener(){
+        MouseMotionListener[] mouseMotionListeners = getMouseMotionListeners();
+        if (mouseMotionListeners.length > 0){
+            return mouseMotionListeners[0];
+        } else {
+            return null;
         }
     }
 
