@@ -35,13 +35,13 @@ public class MainWindow {
         mainFrame.setLayout(new GridLayout());
         mainFrame.setLocationRelativeTo(null);
 
-        LineDrawer lineDrawer = new LineDrawer(shapesDrawer);
-        shapesDrawer.addMouseListener(lineDrawer);
-        shapesDrawer.addMouseMotionListener(lineDrawer);
+        LineDrawTool lineDrawTool = new LineDrawTool(shapesDrawer);
+        shapesDrawer.addMouseListener(lineDrawTool);
+        shapesDrawer.addMouseMotionListener(lineDrawTool);
 
         JPanel buttonsPanel = new JPanel();
         mainFrame.add(buttonsPanel);
-        buttonsPanel.add(lineDrawer.getSetButton());
+        buttonsPanel.add(lineDrawTool.getSetButton());
 
         mainFrame.add(shapesDrawer);
         mainFrame.add(buttonsPanel);

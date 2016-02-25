@@ -3,12 +3,12 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 
-public class LineDrawer extends MouseAdapter{
+public class LineDrawTool extends MouseAdapter{
     private ShapesDrawer shapesDrawer;
     private Line drawingLine;
     private JButton setButton = new JButton("Линия");
 
-    public LineDrawer(ShapesDrawer shapesDrawer) {
+    public LineDrawTool(ShapesDrawer shapesDrawer) {
         this.shapesDrawer = shapesDrawer;
     }
 
