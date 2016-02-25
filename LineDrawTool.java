@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.event.InputEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -25,8 +26,11 @@ public class LineDrawTool extends DrawTool{
         }
 
         public void mousePressed(MouseEvent e){
-            super.removeListeners();
+            if (isCtrlPressed(e)) {
+                return;
+            }
 
+            super.removeListeners();
             getShapesDrawer().addMouseListener(LineDrawTool.this);
             getShapesDrawer().addMouseMotionListener(LineDrawTool.this);
         }

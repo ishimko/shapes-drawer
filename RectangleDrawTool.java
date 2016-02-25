@@ -19,6 +19,9 @@ public class RectangleDrawTool extends DrawTool{
         }
 
         public void mousePressed(MouseEvent e){
+            if (isCtrlPressed(e)){
+                return;
+            }
             removeListeners();
 
             getShapesDrawer().addMouseListener(RectangleDrawTool.this);
