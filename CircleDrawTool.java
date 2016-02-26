@@ -7,9 +7,10 @@ public class CircleDrawTool extends DrawTool {
         getChooseToolBtn().addMouseListener(new ChooseCircleBtnMouseListener(shapesDrawer));
     }
 
+
     @Override
-    public void mousePressed(MouseEvent e){
-        drawingShape = new Circle(new Point(e.getX(), e.getY()), 1);
+    public void mousePressed(MouseEvent e) {
+        drawingShape = new Circle(new Point(e), 1);
         createShape(drawingShape);
     }
 

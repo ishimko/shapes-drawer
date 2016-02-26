@@ -13,11 +13,4 @@ public class Rectangle extends Polygon {
         setPoint(3, new Point(getPoint(0).x, point.y));
     }
 
-//    protected int getWidth(){
-//        return Math.abs(getTopLeft().x - getPoint(1).x)
-//    }
-//
-//    protected int getHeight(){
-//        return Math.abs(getTopLeft().y - getPoint(1).y)
-//    }
 }

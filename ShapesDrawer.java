@@ -45,7 +45,10 @@ public class ShapesDrawer extends JPanel {
     }
 
     public void setDrawTool(DrawTool drawTool){
-        drawTool.finishDrawing();
+        if (this.drawTool != null) {
+            this.drawTool.finishDrawing();
+        }
+        this.drawTool = drawTool;
         removeListeners();
         addMouseListener(drawTool);
         addMouseMotionListener(drawTool);

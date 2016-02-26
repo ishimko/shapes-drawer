@@ -1,8 +1,6 @@
 import java.awt.event.MouseEvent;
 
 public class SquareDrawTool extends DrawTool {
-    //private Square drawingSquare;
-
     public SquareDrawTool(ShapesDrawer shapesDrawer){
         super(shapesDrawer);
         getChooseToolBtn().setText("Квадрат");

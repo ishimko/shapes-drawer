@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 public abstract class DrawTool extends MouseAdapter {
     private ShapesDrawer shapesDrawer;
@@ -26,7 +25,7 @@ public abstract class DrawTool extends MouseAdapter {
     public void finishDrawing(){}
 
     public void mouseDragged(MouseEvent e) {
-        drawingShape.refreshShape(new Point(e.getX(), e.getY()));
+        drawingShape.refreshShape(new Point(e));
         shapesDrawer.draw();
     }
 

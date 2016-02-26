@@ -1,5 +1,3 @@
-//package src;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -35,16 +33,6 @@ public class MainWindow {
         mainFrame.setLayout(new GridLayout());
         mainFrame.setLocationRelativeTo(null);
 
-       // RectangleDrawTool rectangleDrawTool = new RectangleDrawTool(shapesDrawer);
-
-        //shapesDrawer.addMouseListener(rectangleDrawTool);
-        //shapesDrawer.addMouseMotionListener(rectangleDrawTool);
-        //LineDrawTool lineDrawTool = new LineDrawTool(shapesDrawer);
-//        shapesDrawer.addMouseListener(lineDrawTool);
-//        shapesDrawer.addMouseMotionListener(lineDrawTool);
-
-
-
         JPanel buttonsPanel = new JPanel();
         mainFrame.add(buttonsPanel);
         buttonsPanel.add(new LineDrawTool(shapesDrawer).getChooseToolBtn());
@@ -54,6 +42,7 @@ public class MainWindow {
         buttonsPanel.add(new EllipseDrawTool(shapesDrawer).getChooseToolBtn());
         buttonsPanel.add(new CircleDrawTool(shapesDrawer).getChooseToolBtn());
         buttonsPanel.add(new PolygonDrawTool(shapesDrawer).getChooseToolBtn());
+        buttonsPanel.add(new PolylineDrawTool(shapesDrawer).getChooseToolBtn());
 
         buttonsPanel.add(shapesDrawer.getUndoButton());
 

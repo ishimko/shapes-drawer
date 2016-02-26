@@ -1,5 +1,4 @@
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 public class EllipseDrawTool extends DrawTool{
     public EllipseDrawTool(ShapesDrawer shapesDrawer){
@@ -8,8 +7,9 @@ public class EllipseDrawTool extends DrawTool{
         getChooseToolBtn().addMouseListener(new ChooseEllipseBtnListener(shapesDrawer));
     }
 
-    public void mousePressed(MouseEvent e){
-        drawingShape = new Ellipse(new Point(e.getX(), e.getY()), 2, 2);
+    @Override
+    public void mousePressed(MouseEvent e) {
+        drawingShape = new Ellipse(new Point(e), 2, 2);
         createShape(drawingShape);
     }
 
