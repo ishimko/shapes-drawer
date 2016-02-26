@@ -53,6 +53,7 @@ public class MainWindow {
         buttonsPanel.add(new SquareDrawTool(shapesDrawer).getChooseToolBtn());
         buttonsPanel.add(new EllipseDrawTool(shapesDrawer).getChooseToolBtn());
         buttonsPanel.add(new CircleDrawTool(shapesDrawer).getChooseToolBtn());
+        buttonsPanel.add(new PolygonDrawTool(shapesDrawer).getChooseToolBtn());
 
         buttonsPanel.add(shapesDrawer.getUndoButton());
 

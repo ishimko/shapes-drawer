@@ -4,6 +4,12 @@ import java.util.ArrayList;
 public class Polyline extends Shape{
     private ArrayList<Point> points = new ArrayList<>();
 
+    public  Polyline(){}
+
+    public Polyline(Point point){
+        points.add(point);
+    }
+
     public void addPoint(Point p){
         points.add(p);
     }
@@ -50,6 +56,14 @@ public class Polyline extends Shape{
     @Override
     public void refreshShape(Point p){
         addPoint(p);
+    }
+
+    public void setFinishPoint(Point point){
+        if (getPointsCount() < 2){
+            addPoint(point);
+        } else {
+            setPoint(getPointsCount() - 1, point);
+        }
     }
 
     public void draw(Graphics g){
