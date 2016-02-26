@@ -20,10 +20,6 @@ public class CircleDrawTool extends DrawTool {
 
         @Override
         public void mousePressed(MouseEvent e){
-            if (isCtrlPressed(e)){
-                return;
-            }
-
             removeListeners();
 
             getShapesDrawer().addMouseListener(CircleDrawTool.this);

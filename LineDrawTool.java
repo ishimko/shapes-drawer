@@ -26,11 +26,7 @@ public class LineDrawTool extends DrawTool{
         }
 
         public void mousePressed(MouseEvent e){
-            if (isCtrlPressed(e)) {
-                return;
-            }
-
-            super.removeListeners();
+            removeListeners();
             getShapesDrawer().addMouseListener(LineDrawTool.this);
             getShapesDrawer().addMouseMotionListener(LineDrawTool.this);
         }

@@ -23,9 +23,6 @@ public class TriangleDrawTool extends DrawTool{
         }
 
         public void mousePressed(MouseEvent e){
-            if (isCtrlPressed(e)){
-                return;
-            }
             removeListeners();
 
             getShapesDrawer().addMouseListener(TriangleDrawTool.this);
