@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -22,14 +23,15 @@ public abstract class DrawTool extends MouseAdapter {
 
     public abstract void mousePressed(MouseEvent e);
 
-    public void finishDrawing(){}
+    public void finishDrawing() {
+    }
 
     public void mouseDragged(MouseEvent e) {
         drawingShape.refreshShape(new Point(e));
         shapesDrawer.draw();
     }
 
-    protected ShapesDrawer getShapesDrawer(){
+    protected ShapesDrawer getShapesDrawer() {
         return shapesDrawer;
     }
 }
