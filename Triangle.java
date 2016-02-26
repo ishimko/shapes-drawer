@@ -6,9 +6,9 @@ public class Triangle extends Polygon{
     }
 
     @Override
-    public void refreshShape(Point bottomRight){
-        setPoint(1, new Point(getTopLeft().x, bottomRight.y));
-        setPoint(2, bottomRight);
+    public void refreshShape(Point point){
+        setPoint(1, new Point(getTopLeft().x, point.y));
+        setPoint(2, point);
     }
 
     private Point getTopLeft(){

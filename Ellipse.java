@@ -18,8 +18,8 @@ public class Ellipse extends Shape{
         return new Point(xMin, yMin);
     }
 
-    public void refreshShape(Point p){
-        movingPoint = new Point(p);
+    public void refreshShape(Point point){
+        movingPoint = new Point(point);
     }
 
     protected Point getBottomRight(){

@@ -5,18 +5,6 @@ public class Circle extends Ellipse {
         super(new Point(center.x - radius, center.y - radius), radius*2, radius*2);
     }
 
-//    @Override
-//    public void refreshShape(Point point){
-//        int newWidth = Math.abs(getFixedPoint().x - point.x);
-//        int newHeight = Math.abs(getFixedPoint().y - point.y);
-//
-//        if (newHeight < newWidth){
-//            super.refreshShape(new Point(getFixedPoint().x, point.y));
-//        } else {
-//            super.refreshShape(new Point(point.x, getFixedPoint().y));
-//        }
-//    }
-
     @Override
     public void draw(Graphics g){
         g.setColor(getBorderColor());

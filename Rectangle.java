@@ -7,10 +7,10 @@ public class Rectangle extends Polygon {
     }
 
     @Override
-    public void refreshShape(Point bottomRight){
-        setPoint(1, new Point(bottomRight.x, getPoint(0).y));
-        setPoint(2, bottomRight);
-        setPoint(3, new Point(getPoint(0).x, bottomRight.y));
+    public void refreshShape(Point point){
+        setPoint(1, new Point(point.x, getPoint(0).y));
+        setPoint(2, point);
+        setPoint(3, new Point(getPoint(0).x, point.y));
     }
 
 //    protected int getWidth(){

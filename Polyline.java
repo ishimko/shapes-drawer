@@ -5,7 +5,7 @@ public class Polyline extends Shape{
     private ArrayList<Point> points = new ArrayList<>();
 
     public void addPoint(Point p){
-        points.add(new Point(p.x, p.y));
+        points.add(p);
     }
 
     protected void setPoint(int i, Point newPoint){
