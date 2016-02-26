@@ -1,5 +1,3 @@
-//package src;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -10,6 +8,11 @@ import java.util.ArrayList;
 
 public class ShapesDrawer extends JPanel {
     private ArrayList<Shape> shapesList =  new ArrayList<>();
+
+    public ShapesDrawer(){
+        setBackground(Color.WHITE);
+    }
+
     private JButton undoButton = new JButton("Отмена");
     {
         undoButton.addMouseListener(new MouseAdapter() {

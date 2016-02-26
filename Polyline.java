@@ -1,5 +1,3 @@
-import com.sun.javafx.scene.paint.GradientUtils;
-
 import java.awt.*;
 import java.util.ArrayList;
 
