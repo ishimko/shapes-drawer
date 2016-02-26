@@ -21,10 +21,7 @@ public class SquareDrawTool extends DrawTool {
         }
 
         public void mousePressed(MouseEvent e){
-            removeListeners();
-
-            getShapesDrawer().addMouseListener(SquareDrawTool.this);
-            getShapesDrawer().addMouseMotionListener(SquareDrawTool.this);
+            getShapesDrawer().setDrawTool(SquareDrawTool.this);
         }
     }
 }

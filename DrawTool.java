@@ -21,11 +21,9 @@ public abstract class DrawTool extends MouseAdapter {
         shapesDrawer.draw();
     }
 
-    public ShapesDrawer getShapesDrawer() {
-        return this.shapesDrawer;
-    }
-
     public abstract void mousePressed(MouseEvent e);
+
+    public void finishDrawing(){}
 
     public void mouseDragged(MouseEvent e) {
         drawingShape.refreshShape(new Point(e.getX(), e.getY()));

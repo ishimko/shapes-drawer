@@ -8,7 +8,6 @@ public class EllipseDrawTool extends DrawTool{
         getChooseToolBtn().addMouseListener(new ChooseEllipseBtnListener(shapesDrawer));
     }
 
-    @Override
     public void mousePressed(MouseEvent e){
         drawingShape = new Ellipse(new Point(e.getX(), e.getY()), 2, 2);
         createShape(drawingShape);
@@ -19,12 +18,8 @@ public class EllipseDrawTool extends DrawTool{
             super(shapesDrawer);
         }
 
-        @Override
         public void mousePressed(MouseEvent e){
-            removeListeners();
-
-            getShapesDrawer().addMouseListener(EllipseDrawTool.this);
-            getShapesDrawer().addMouseMotionListener(EllipseDrawTool.this);
+            getShapesDrawer().setDrawTool(EllipseDrawTool.this);
         }
     }
 }

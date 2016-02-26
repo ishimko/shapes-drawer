@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class ShapesDrawer extends JPanel {
     private ArrayList<Shape> shapesList =  new ArrayList<>();
+    DrawTool drawTool;
 
     public ShapesDrawer(){
         setBackground(Color.WHITE);
@@ -36,6 +37,18 @@ public class ShapesDrawer extends JPanel {
         for (Shape shape : shapesList){
             shape.draw(g);
         }
+    }
+
+    private void removeListeners(){
+        removeMouseListener(getMouseListener());
+        removeMouseMotionListener(getMouseMotionListener());
+    }
+
+    public void setDrawTool(DrawTool drawTool){
+        drawTool.finishDrawing();
+        removeListeners();
+        addMouseListener(drawTool);
+        addMouseMotionListener(drawTool);
     }
 
     public MouseListener getMouseListener(){

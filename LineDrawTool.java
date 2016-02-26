@@ -6,8 +6,6 @@ import java.awt.event.MouseListener;
 
 
 public class LineDrawTool extends DrawTool{
-    //private Line drawingLine;
-
     public LineDrawTool(ShapesDrawer shapesDrawer) {
         super(shapesDrawer);
         getChooseToolBtn().setText("Линия");
@@ -19,16 +17,13 @@ public class LineDrawTool extends DrawTool{
         createShape(drawingShape);
     }
 
-
     private class ChooseLineBtnMouseListener extends ChooseToolBtnMouseListener{
         public ChooseLineBtnMouseListener(ShapesDrawer shapesDrawer){
             super(shapesDrawer);
         }
 
         public void mousePressed(MouseEvent e){
-            removeListeners();
-            getShapesDrawer().addMouseListener(LineDrawTool.this);
-            getShapesDrawer().addMouseMotionListener(LineDrawTool.this);
+            getShapesDrawer().setDrawTool(LineDrawTool.this);
         }
     }
 
