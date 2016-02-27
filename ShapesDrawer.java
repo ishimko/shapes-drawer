@@ -40,8 +40,8 @@ public class ShapesDrawer extends JPanel {
     }
 
     private void removeListeners(){
-        removeMouseListener(getMouseListener());
-        removeMouseMotionListener(getMouseMotionListener());
+        removeMouseListener(drawTool);
+        removeMouseMotionListener(drawTool);
     }
 
     public void setDrawTool(DrawTool drawTool){
@@ -52,24 +52,6 @@ public class ShapesDrawer extends JPanel {
         removeListeners();
         addMouseListener(drawTool);
         addMouseMotionListener(drawTool);
-    }
-
-    public MouseListener getMouseListener(){
-        MouseListener[] mouseListeners = getMouseListeners();
-        if (mouseListeners.length > 0){
-            return mouseListeners[0];
-        } else {
-            return null;
-        }
-    }
-
-    public MouseMotionListener getMouseMotionListener(){
-        MouseMotionListener[] mouseMotionListeners = getMouseMotionListeners();
-        if (mouseMotionListeners.length > 0){
-            return mouseMotionListeners[0];
-        } else {
-            return null;
-        }
     }
 
     private void removeLast(){

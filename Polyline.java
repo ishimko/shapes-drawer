@@ -66,6 +66,12 @@ public class Polyline extends Shape{
         }
     }
 
+    public void removeLastPoint(){
+        if (points.size() > 0){
+            points.remove(points.size() - 1);
+        }
+    }
+
     public void draw(Graphics g){
         g.setColor(getBorderColor());
         g.drawPolyline(getXs(), getYs(), getPointsCount());

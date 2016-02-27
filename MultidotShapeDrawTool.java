@@ -31,6 +31,8 @@ public abstract class MultidotShapeDrawTool extends DrawTool {
 
     @Override
     public void finishDrawing(){
+        drawingMultidotShape.removeLastPoint();
+        getShapesDrawer().draw();
         drawingShape = null;
     }
 
