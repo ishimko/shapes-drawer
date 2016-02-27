@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Polyline extends Shape{
     private ArrayList<Point> points = new ArrayList<>();
@@ -25,23 +26,11 @@ public class Polyline extends Shape{
     }
 
     protected int[] getXs(){
-        int[] xs = new int[points.size()];
-
-        for (int i = 0; i < points.size(); i++){
-            xs[i] = points.get(i).x;
-        }
-
-        return xs;
+        return points.stream().mapToInt((s) -> s.x).toArray();
     }
 
     protected int[] getYs(){
-        int[] ys = new int[points.size()];
-
-        for (int i = 0; i < points.size(); i++){
-            ys[i] = points.get(i).y;
-        }
-
-        return ys;
+        return points.stream().mapToInt((s) -> s.y).toArray();
     }
 
     public Point getPoint(int i){
