@@ -4,10 +4,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.util.ArrayList;
+import java.util.*;
+import java.util.List;
 
 public class ShapesDrawer extends JPanel {
-    private ArrayList<Shape> shapesList =  new ArrayList<>();
+    private List<Shape> shapesList =  new ArrayList<>();
     DrawTool drawTool;
 
     public ShapesDrawer(){
@@ -48,8 +49,8 @@ public class ShapesDrawer extends JPanel {
         if (this.drawTool != null) {
             this.drawTool.finishDrawing();
         }
-        this.drawTool = drawTool;
         removeListeners();
+        this.drawTool = drawTool;
         addMouseListener(drawTool);
         addMouseMotionListener(drawTool);
     }

@@ -2,12 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainWindow extends JPanel {
-    private GridBagConstraints constraints =  new GridBagConstraints();
-
+    static ShapesDrawer shapesDrawer = new ShapesDrawer();
 
     public MainWindow(){
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        ShapesDrawer shapesDrawer = new ShapesDrawer();
         add(shapesDrawer, BorderLayout.WEST);
 
         JPanel buttonsPanel = new JPanel();
