@@ -1,14 +1,14 @@
+package draw_tools;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
 import java.util.*;
 import java.util.List;
 
 public class ShapesDrawer extends JPanel {
-    private List<Shape> shapesList =  new ArrayList<>();
+    private List<shapes.Shape> shapesList =  new ArrayList<>();
     DrawTool drawTool;
 
     public ShapesDrawer(){
@@ -35,7 +35,7 @@ public class ShapesDrawer extends JPanel {
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        for (Shape shape : shapesList){
+        for (shapes.Shape shape : shapesList){
             shape.draw(g);
         }
     }
@@ -62,7 +62,7 @@ public class ShapesDrawer extends JPanel {
         draw();
     }
 
-    public void addShape(Shape f) {
+    public void addShape(shapes.Shape f) {
         shapesList.add(f);
     }
 }

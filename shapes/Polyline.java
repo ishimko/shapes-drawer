@@ -1,6 +1,7 @@
+package shapes;
+
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Polyline extends Shape{
     private ArrayList<Point> points = new ArrayList<>();

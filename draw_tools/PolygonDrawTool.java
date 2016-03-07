@@ -1,3 +1,8 @@
+package draw_tools;
+
+import shapes.Point;
+import shapes.Polygon;
+
 import java.awt.event.MouseEvent;
 
 public class PolygonDrawTool extends MultidotShapeDrawTool {

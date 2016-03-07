@@ -1,3 +1,8 @@
+package draw_tools;
+
+import shapes.Circle;
+import shapes.Point;
+
 import java.awt.event.MouseEvent;
 
 public class CircleDrawTool extends DrawTool {

@@ -1,3 +1,5 @@
+package shapes;
+
 import java.awt.*;
 
 public abstract class Shape {
@@ -15,7 +17,7 @@ public abstract class Shape {
         this.borderColor = borderColor;
     }
 
-    public abstract void refreshShape(Point point);
+    public abstract void refreshShape(shapes.Point point);
 
     public abstract void draw(Graphics g);
 }

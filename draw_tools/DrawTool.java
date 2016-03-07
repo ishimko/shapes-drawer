@@ -1,3 +1,8 @@
+package draw_tools;
+
+import shapes.Point;
+import shapes.Shape;
+
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

@@ -1,3 +1,8 @@
+package draw_tools;
+
+import shapes.Ellipse;
+import shapes.Point;
+
 import java.awt.event.MouseEvent;
 
 public class EllipseDrawTool extends DrawTool {

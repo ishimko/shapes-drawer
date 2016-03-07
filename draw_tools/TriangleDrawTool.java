@@ -1,3 +1,8 @@
+package draw_tools;
+
+import shapes.Point;
+import shapes.Triangle;
+
 import java.awt.event.MouseEvent;
 
 public class TriangleDrawTool extends DrawTool {

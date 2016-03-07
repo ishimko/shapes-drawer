@@ -1,3 +1,5 @@
+package shapes;
+
 public class Rectangle extends Polygon {
     public Rectangle(Point topLeft, int width, int height){
         addPoint(new Point(topLeft.x, topLeft.y));

@@ -1,3 +1,8 @@
+package draw_tools;
+
+import shapes.Point;
+import shapes.Square;
+
 import java.awt.event.MouseEvent;
 
 public class SquareDrawTool extends DrawTool {

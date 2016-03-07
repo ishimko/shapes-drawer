@@ -1,3 +1,8 @@
+package draw_tools;
+
+import shapes.Point;
+import shapes.Rectangle;
+
 import java.awt.event.MouseEvent;
 
 public class RectangleDrawTool extends DrawTool{

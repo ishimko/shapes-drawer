@@ -1,3 +1,5 @@
+package shapes;
+
 public class Line extends Polyline {
     public Line(Point p){
         addPoint(p);

@@ -1,3 +1,5 @@
+package shapes;
+
 import java.awt.event.MouseEvent;
 
 public class Point {

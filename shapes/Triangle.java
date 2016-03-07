@@ -1,3 +1,5 @@
+package shapes;
+
 public class Triangle extends Polygon{
     public Triangle(Point topLeft, Point bottomRight){
         addPoint(topLeft);
